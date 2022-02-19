@@ -3,15 +3,15 @@ import Layout from '../components/Layout';
 import Container from '../components/Container';
 import Navbar from '../components/Navbar';
 
-export default function Home() {
+export default function Contact() {
   return (
     <Layout>
       <Head>
-        <title>TOON PERSYN | DIRECTOR OF PHOTOGRAPHY</title>
+        <title>TOON PERSYN | CONTACT</title>
       </Head>
       <Container>
         <Navbar />
-        <h2>Homepage</h2>
+        <h2>Contact Page</h2>
       </Container>
     </Layout>
   );
