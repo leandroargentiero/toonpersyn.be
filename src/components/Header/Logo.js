@@ -8,9 +8,7 @@ const Logo = () => {
           <span className="text-xl font-semibold uppercase tracking-[.17em]">
             Toon Persyn
           </span>
-          <span className="text-xs uppercase">
-            Director Of Photography
-          </span>
+          <span className="text-xs uppercase">Director Of Photography</span>
         </h1>
       </a>
     </Link>
