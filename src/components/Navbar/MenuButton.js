@@ -3,11 +3,11 @@ const MenuButton = ({ active, handleClick }) => {
     <button
       className={`${
         active ? 'bg-slate-100' : ''
-      } inline-flex p-3 rounded lg:hidden text-slate-400 ml-auto hover:text-slate-500 outline-none`}
+      } ml-auto inline-flex rounded p-3 text-slate-400 outline-none hover:text-slate-500 lg:hidden`}
       onClick={handleClick}
     >
       <svg
-        className="w-6 h-6"
+        className="h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
