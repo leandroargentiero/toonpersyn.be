@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="mt-24 flex flex-col justify-center py-8 text-center">
+    <footer className="mt-24 flex flex-col justify-center pb-12 text-center">
       <p className="mb-2 text-xs">©Toon Persyn - All Rights Reserved</p>
       <p className="text-xs text-gray-400">
         website by{' '}

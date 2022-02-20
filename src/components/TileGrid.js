@@ -2,7 +2,7 @@ import Tile from './Tile';
 
 const TileGrid = ({ data }) => {
   return (
-    <section className="grid gap-y-8 gap-x-3 p-3 md:grid-cols-2 xl:grid-cols-3 xl:p-0">
+    <section className="grid gap-y-8 gap-x-3 md:grid-cols-2 xl:grid-cols-3 xl:p-0">
       {data.map((project, i) => (
         <Tile
           key={i}
