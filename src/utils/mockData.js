@@ -1,4 +1,4 @@
-const mockData = [
+export const mockData = [
   {
     title: 'FC United - City Pirates',
     type: 'Documentary',
@@ -50,5 +50,3 @@ const mockData = [
     image: 'https://source.unsplash.com/random',
   },
 ];
-
-export default mockData;
