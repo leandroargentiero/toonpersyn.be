@@ -1,3 +1,4 @@
+import { PrismicText } from '@prismicio/react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -25,7 +26,9 @@ const Tile = ({
               <h5 className="mb-1 font-primary text-xs uppercase text-yellow-500 ">
                 {type}
               </h5>
-              <h4 className="font-primary text-sm xl:text-white">{title}</h4>
+              <h4 className="font-primary text-sm xl:text-white">
+                <PrismicText field={title} />
+              </h4>
             </div>
           </figcaption>
         </article>

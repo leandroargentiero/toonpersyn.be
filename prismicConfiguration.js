@@ -14,7 +14,7 @@ export const accessToken = process.env.PRISMIC_API_TOKEN;
 // Manages the url links to internal Prismic documents
 export const linkResolver = (doc) => {
   if (doc.type === 'project') {
-    return `/${doc.uid}`;
+    return `/project/${doc.uid}`;
   }
   return '/';
 };
@@ -25,7 +25,7 @@ export const routeResolver = {
   routes: [
     {
       type: 'project',
-      path: '/:uid',
+      path: '/project/:uid',
     },
   ],
 };

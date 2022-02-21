@@ -9,7 +9,7 @@ const TileGrid = ({ data: allProjects }) => {
           key={project.id}
           imageUrl={project.data.coverimage.url}
           type={project.data.type}
-          title={project.data.title[0].text}
+          title={project.data.title}
           uid={project.uid}
         />
       ))}
