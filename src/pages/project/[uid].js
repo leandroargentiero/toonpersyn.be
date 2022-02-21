@@ -36,7 +36,7 @@ export default function Project({ project }) {
             title={project.data.title}
             videoUrl={project.data['video-url'][0]}
           />
-          <section className="container mx-auto max-w-3xl font-primary text-base lg:text-xl">
+          <section className="container prose mx-auto max-w-3xl font-primary hover:prose-a:text-yellow-500">
             <PrismicRichText field={project.data.content} />
           </section>
         </article>
