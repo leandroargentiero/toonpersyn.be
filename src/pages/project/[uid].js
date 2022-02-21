@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { PrismicText, PrismicRichText } from '@prismicio/react';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
@@ -7,7 +8,12 @@ import { Client } from '../../utils/prismicHelpers';
 const ProjectHeader = ({ title, type, videoUrl }) => {
   return (
     <header className="my-8 lg:my-16">
-      <h2 className="mb-2 text-xs uppercase text-yellow-500 lg:text-sm">
+      <Link href="/">
+        <a className="font-primary text-xs hover:text-yellow-500">
+          &#8617;Back home
+        </a>
+      </Link>
+      <h2 className="mb-2 mt-8 text-xs uppercase text-yellow-500 lg:text-sm">
         {type}
       </h2>
       <h1 className="font-primary text-3xl lg:text-5xl">
