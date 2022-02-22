@@ -1,11 +1,19 @@
 import Link from 'next/link';
 import { PrismicText, PrismicRichText } from '@prismicio/react';
+import { useState } from 'react';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
 import ReactPlayer from 'react-player';
 import { Client } from '../../utils/prismicHelpers';
+import ClipLoader from 'react-spinners/SquareLoader';
 
 const ProjectHeader = ({ title, type, videoUrl }) => {
+  const [playerLoading, setPlayerLoading] = useState(true);
+
+  const handleOnReady = () => {
+    setPlayerLoading(false);
+  };
+
   return (
     <header className="my-8 lg:my-16">
       <Link href="/">
@@ -19,13 +27,19 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
       <h1 className="font-primary text-3xl lg:text-5xl">
         <PrismicText field={title} />
       </h1>
-      <section className="relative mt-8 pt-[56.25%]">
+      <section className="relative mt-8 bg-gray-100 pt-[56.25%]">
+        {playerLoading && (
+          <div className="text- translate-y-[-50% absolute left-[50%] top-[50%] translate-x-[-50%]">
+            <ClipLoader color="#CBD5E1" size={30} />
+          </div>
+        )}
         <ReactPlayer
           className="absolute top-0 left-0"
           url={videoUrl.text}
           width="100%"
           height="100%"
-          controls="true"
+          controls={true}
+          onReady={handleOnReady}
         />
       </section>
     </header>

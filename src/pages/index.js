@@ -16,7 +16,7 @@ export default function Home({ data }) {
     const allCategories = projects.map((project) => project.data.type);
     const filterUniqueCategories = [...new Set(allCategories)];
     setCategories(['All', ...filterUniqueCategories]);
-  }, []);
+  }, [projects]);
 
   const handleFilterClick = (e) => {
     const category = e.target.value;
