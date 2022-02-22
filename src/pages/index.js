@@ -18,17 +18,16 @@ export default function Home({ allProjects }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const projects = await Client().getAllByType('project', {
+export async function getStaticProps() {
+  const allProjects = await Client().getAllByType('project', {
     orderings: {
-      field: 'document.first_publication_date',
-      direction: 'desc',
+      field: 'my.project.date desc',
     },
   });
 
   return {
     props: {
-      allProjects: projects,
+      allProjects: allProjects,
     },
   };
 }
