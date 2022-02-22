@@ -10,7 +10,7 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
     <header className="my-8 lg:my-16">
       <Link href="/">
         <a className="font-primary text-xs hover:text-yellow-500">
-          &#8617;Back home
+          &#8617;Back to overview
         </a>
       </Link>
       <h2 className="mb-2 mt-8 text-xs uppercase text-yellow-500 lg:text-sm">
