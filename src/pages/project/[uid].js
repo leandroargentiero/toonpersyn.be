@@ -8,11 +8,7 @@ import { Client } from '../../utils/prismicHelpers';
 import ClipLoader from 'react-spinners/SquareLoader';
 
 const ProjectHeader = ({ title, type, videoUrl }) => {
-  const [playerLoading, setPlayerLoading] = useState(true);
-
-  const handleOnReady = () => {
-    setPlayerLoading(false);
-  };
+  const [playerLoaded, setPlayerLoaded] = useState(false);
 
   return (
     <header className="my-8 lg:my-16">
@@ -27,10 +23,10 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
       <h1 className="font-primary text-3xl lg:text-5xl">
         <PrismicText field={title} />
       </h1>
-      <section className="relative mt-8 bg-gray-100 pt-[56.25%]">
-        {playerLoading && (
-          <div className="text- translate-y-[-50% absolute left-[50%] top-[50%] translate-x-[-50%]">
-            <ClipLoader color="#CBD5E1" size={30} />
+      <section className="relative mt-8 bg-gray-50 pt-[56.25%]">
+        {!playerLoaded && (
+          <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+            <ClipLoader color="#e5e7eb" size={30} />
           </div>
         )}
         <ReactPlayer
@@ -39,7 +35,7 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
           width="100%"
           height="100%"
           controls={true}
-          onReady={handleOnReady}
+          onReady={() => setPlayerLoaded(true)}
         />
       </section>
     </header>
