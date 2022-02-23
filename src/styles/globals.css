@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 * {
-  @apply text-slate-900;
+  @apply text-gray-800;
 }
