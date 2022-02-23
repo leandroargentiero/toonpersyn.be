@@ -29,10 +29,6 @@ const Meta = () => {
         name="description"
         content="Belgian Director Of Photography that focuses on narratives, documentary and commercials. Based in Mechelen."
       />
-      <meta
-        property="og:image"
-        content="https://images.prismic.io/website-toonpersyn/14dcd26b-eab8-49bf-8902-9b397225744a_share_toonpersyn.jpeg?auto=compress,format"
-      />
     </Head>
   );
 };

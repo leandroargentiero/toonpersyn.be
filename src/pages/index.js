@@ -34,6 +34,10 @@ export default function Home({ data }) {
     <Layout>
       <Head>
         <title>TOON PERSYN | DIRECTOR OF PHOTOGRAPHY</title>
+        <meta
+          property="og:image"
+          content="https://images.prismic.io/website-toonpersyn/14dcd26b-eab8-49bf-8902-9b397225744a_share_toonpersyn.jpeg?auto=compress,format"
+        />
       </Head>
       <Container>
         <FilterButtons
