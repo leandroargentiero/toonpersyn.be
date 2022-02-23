@@ -9,13 +9,13 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);
-  const [categories, setCategories] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [categories, setCategories] = useState(['All']);
+  const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     const allCategories = projects.map((project) => project.data.type);
     const filterUniqueCategories = [...new Set(allCategories)];
-    setCategories(['All', ...filterUniqueCategories]);
+    setCategories([...categories, ...filterUniqueCategories]);
   }, []);
 
   const handleFilterClick = (e) => {
