@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import TileGrid from '../components/TileGrid';
-import FilterButtons from '../components/FitlerButtons';
+import FilterButtons from '../components/FilterButtons';
 
 import { Client } from '../utils/prismicHelpers';
 import { useEffect, useState } from 'react';
