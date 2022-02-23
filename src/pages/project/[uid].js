@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { PrismicText, PrismicRichText } from '@prismicio/react';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
@@ -45,6 +46,10 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
 export default function Project({ project }) {
   return (
     <Layout>
+      <Head>
+        <title>TOON PERSYN | {project.data.title[0].text}</title>
+        <meta property="og:image" content={project.data.coverimage.url} />
+      </Head>
       <Container>
         <article>
           <ProjectHeader
