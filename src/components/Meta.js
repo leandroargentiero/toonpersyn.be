@@ -27,7 +27,7 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content="Belgian Director Of Photography that focuses on narratives, documentary and commercials. Based in Mechelen."
+        content="Belgian irector Of Photography that focuses on fiction, documentary and commercials. Based in Mechelen."
       />
     </Head>
   );
