@@ -7,10 +7,8 @@ const Layout = ({ children }) => {
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen">
-        <main>{children}</main>
-        <Footer />
-      </div>
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };
