@@ -2,24 +2,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const Logo = () => {
-  const [mode, setMode] = useState('');
-  const DARK_COLOR = '#1F2937';
-  const LIGHT_COLOR = '#1e293b';
-
-  useEffect(() => {
-    window.matchMedia('(prefers-color-scheme: dark)')
-      ? setMode('dark')
-      : setMode('light');
-  }, [mode]);
-
   return (
     <Link href="/">
       <a className="transition-all duration-150 ease-in-out hover:opacity-70">
         <svg
           height="32px"
           viewBox="0 0 214 39"
-          fill={mode === 'dark' ? LIGHT_COLOR : DARK_COLOR}
           xmlns="http://www.w3.org/2000/svg"
+          className="fill-current text-neutral-800 dark:text-neutral-200"
         >
           <path
             fillRule="evenodd"
