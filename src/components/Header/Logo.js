@@ -5,7 +5,6 @@ const Logo = () => {
     <Link href="/">
       <a className="transition-all duration-150 ease-in-out hover:opacity-70">
         <svg
-          width="auto"
           height="32px"
           viewBox="0 0 214 39"
           fill="none"
