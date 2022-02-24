@@ -20,7 +20,7 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
       <h1 className="font-primary text-3xl lg:text-5xl">
         <PrismicText field={title} />
       </h1>
-      <section className="relative mt-8 bg-gray-50 pt-[56.25%]">
+      <section className="relative mt-8 bg-gray-50 pt-[56.25%] dark:bg-neutral-800">
         {!playerLoaded && (
           <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
             <ClipLoader color="#e5e7eb" size={30} />
