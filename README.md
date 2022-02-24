@@ -9,6 +9,7 @@ See production: [www.toonpersyn.be](www.toonpersyn.be)
 - React.js framework [Next.js](https://nextjs.org/)
 - Styling with [TailwindCSS](https://tailwindcss.com/)
 - CMS Integration with [Prismic](https://prismic.io/)
+- Animation with [Framer Motion](https://www.framer.com/motion/)
 - Deployed on [Vercel](https://vercel.com/)
 
 ## Installing project
