@@ -2,7 +2,7 @@ const MenuToggleButton = ({ menuOpen, handleClick }) => {
   return (
     <button
       role="button"
-      className="ml-auto inline-flex rounded p-3 text-yellow-500 outline-none md:hidden"
+      className="ml-auto inline-flex rounded p-3 outline-none md:hidden"
       onClick={handleClick}
     >
       {menuOpen ? (
