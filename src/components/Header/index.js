@@ -12,9 +12,9 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-30  bg-white/80 py-4 saturate-100 backdrop-blur-md md:mb-8 md:py-8">
+    <header className="sticky top-0 z-30 bg-white/80 py-4 saturate-100 backdrop-blur-md md:mb-8 md:py-8">
       <Container>
-        <div className="flex w-full flex-wrap justify-between">
+        <div className="flex w-full flex-wrap items-center justify-between md:items-end">
           <Logo />
           <MenuToggleButton menuOpen={menuOpen} handleClick={toggleMenu} />
           <Navigation menuOpen={menuOpen} />
