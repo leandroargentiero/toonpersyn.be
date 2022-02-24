@@ -9,26 +9,19 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);
-  const [categories, setCategories] = useState(['All']);
+  const [categories, setCategories] = useState([]);
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {
-    const allCategories = projects.map((project) => project.data.type);
+    const allCategories = data.map((project) => project.data.type);
     const filterUniqueCategories = [...new Set(allCategories)];
-    setCategories([...categories, ...filterUniqueCategories]);
-  }, []);
+    setCategories(['All', ...filterUniqueCategories]);
+  }, [data]);
 
-  const handleFilterClick = (e) => {
-    const category = e.target.value;
-    setFilter(category);
-    const filteredProjects = data.filter((p) => p.data.type === category);
-
-    if (category === 'All') {
-      return setProjects(data);
-    }
-
-    return setProjects(filteredProjects);
-  };
+  useEffect(() => {
+    const filteredProjects = data.filter((p) => p.data.type === filter);
+    return filter === 'All' ? setProjects(data) : setProjects(filteredProjects);
+  }, [data, filter]);
 
   return (
     <Layout>
@@ -43,7 +36,7 @@ export default function Home({ data }) {
         <FilterButtons
           categories={categories}
           filter={filter}
-          handleFilterClick={handleFilterClick}
+          handleFilterClick={(e) => setFilter(e.target.value)}
         />
         <TileGrid projects={projects} />
       </Container>

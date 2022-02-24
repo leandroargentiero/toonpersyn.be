@@ -10,6 +10,7 @@ const TileGrid = ({ projects }) => {
           type={project.data.type}
           title={project.data.title}
           uid={project.uid}
+          i={i}
         />
       ))}
     </section>

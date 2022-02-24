@@ -3,18 +3,35 @@ import { PrismicText } from '@prismicio/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Loader from './Loader';
+import { motion } from 'framer-motion';
 
 const Tile = ({
   imageUrl,
   type = 'project-type',
   title = 'project-title',
   uid,
+  i,
 }) => {
   const [loaded, setLoaded] = useState(false);
 
+  const tileVariants = {
+    hidden: {
+      y: 16,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        delay: i * 0.02,
+      },
+    },
+  };
+
   return (
-    <Link href={`/project/${uid}`}>
-      <a>
+    <Link href={`/project/${uid}`} passHref>
+      <motion.a variants={tileVariants} initial="hidden" animate="visible">
         <article className="group relative mb-4">
           <figure className="relative aspect-[2.39/1] overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
@@ -43,7 +60,7 @@ const Tile = ({
             </figcaption>
           )}
         </article>
-      </a>
+      </motion.a>
     </Link>
   );
 };
