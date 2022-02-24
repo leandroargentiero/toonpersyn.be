@@ -1,16 +1,13 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const NavItem = ({ href, text }) => {
-  const router = useRouter();
-  const currentPath = router.asPath;
-
+const NavItem = ({ href, text, active }) => {
   return (
     <Link href={href}>
       <a>
         <li
           className={`${
-            href === currentPath ? 'underline' : ''
+            active ? 'underline' : ''
           } py-6 font-primary text-xs uppercase hover:text-yellow-500 active:text-yellow-600 md:p-0`}
         >
           {text}
@@ -21,6 +18,8 @@ const NavItem = ({ href, text }) => {
 };
 
 const Navigation = ({ menuOpen }) => {
+  const router = useRouter();
+
   return (
     <nav className="w-full md:w-auto">
       <ul
@@ -28,8 +27,16 @@ const Navigation = ({ menuOpen }) => {
           menuOpen ? '' : 'hidden'
         } h-full gap-x-9 text-center md:grid md:grid-flow-col md:items-end`}
       >
-        <NavItem href="/" text="selected work" />
-        <NavItem href="/contact" text="contact" />
+        <NavItem
+          href="/"
+          text="selected work"
+          active={router.pathname == '/' ? true : false}
+        />
+        <NavItem
+          href="/contact"
+          text="contact"
+          active={router.pathname == '/contact' ? true : false}
+        />
       </ul>
     </nav>
   );
