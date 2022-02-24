@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 const Logo = () => {
   const [mode, setMode] = useState('');
   const DARK_COLOR = '#1F2937';
-  const LIGHT_COLOR = '#e5e7eb';
+  const LIGHT_COLOR = '#1e293b';
 
   useEffect(() => {
     window.matchMedia('(prefers-color-scheme: dark)')
