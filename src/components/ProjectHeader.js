@@ -14,10 +14,10 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
           &#8617;Back to overview
         </a>
       </Link>
-      <h2 className="mb-2 mt-8 text-xs uppercase text-yellow-500 lg:text-sm">
+      <h2 className="mb-2 mt-8 font-primary text-xs uppercase tracking-wider text-yellow-500">
         {type}
       </h2>
-      <h1 className="font-primary text-3xl lg:text-5xl">
+      <h1 className="font-primary text-2xl uppercase">
         <PrismicText field={title} />
       </h1>
       <section className="relative mt-8 bg-gray-50 pt-[56.25%] dark:bg-neutral-800">
