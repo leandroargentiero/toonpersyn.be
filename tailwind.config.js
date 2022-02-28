@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['IBM Plex Mono', 'monospace'],
+        primary: ['Roboto Slab', 'serif'],
       },
       // custom animation classes
       animation: {

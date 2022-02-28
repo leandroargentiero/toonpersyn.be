@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-white/80 py-4 saturate-100 backdrop-blur-md dark:bg-neutral-900/80 md:mb-8 md:py-8">
+    <header className="sticky top-0 z-30 bg-white/80 py-4 saturate-100 backdrop-blur-md dark:bg-neutral-900 md:mb-8 md:mt-8 md:py-5">
       <Container>
         <div className="flex w-full flex-wrap items-center justify-between md:items-end">
           <Logo />
