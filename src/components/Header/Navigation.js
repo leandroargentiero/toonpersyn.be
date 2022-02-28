@@ -7,7 +7,7 @@ const NavItem = ({ href, text, active }) => {
       <a>
         <li
           className={`${
-            active ? 'underline' : ''
+            active ? 'text-yellow-500' : ''
           } py-6 font-primary text-xs uppercase hover:text-yellow-500 active:text-yellow-600 md:p-0`}
         >
           {text}
