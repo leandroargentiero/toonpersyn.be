@@ -1,6 +1,6 @@
 const FilterButtons = ({ categories, handleFilterClick, filter }) => {
   return (
-    <section className="mt-4 mb-8 grid w-full auto-cols-auto grid-flow-col justify-between md:justify-center md:gap-x-4">
+    <section className="mt-4 mb-8 grid w-full auto-cols-auto grid-flow-col justify-between md:justify-start md:gap-x-4">
       {categories &&
         categories.map((category) => {
           return (
