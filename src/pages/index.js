@@ -9,14 +9,13 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);
-  const [categories, setCategories] = useState([]);
+  const [categories] = useState([
+    'All',
+    'Narrative',
+    'Commercial',
+    'Documentary',
+  ]);
   const [filter, setFilter] = useState('All');
-
-  useEffect(() => {
-    const allCategories = data.map((project) => project.data.type);
-    const filterUniqueCategories = [...new Set(allCategories)];
-    setCategories(['All', ...filterUniqueCategories]);
-  }, [data]);
 
   useEffect(() => {
     const filteredProjects = data.filter((p) => p.data.type === filter);
