@@ -50,7 +50,7 @@ const Tile = ({
           {loaded && (
             <figcaption className="absolute -bottom-8 w-3/4 bg-white px-2 py-3 dark:bg-neutral-900 xl:bottom-0 xl:z-20 xl:flex xl:h-full xl:w-full xl:flex-col xl:justify-center xl:bg-transparent xl:align-middle">
               <div className="xl:hidden xl:text-center xl:group-hover:block xl:group-hover:animate-fadeInUp">
-                <h5 className="mb-1 font-primary text-xs uppercase text-yellow-500 ">
+                <h5 className="mb-1 text-xs uppercase text-yellow-500 ">
                   {type}
                 </h5>
                 <h4 className="font-primary text-sm xl:text-white">
