@@ -11,15 +11,14 @@ export default function Contact() {
         <title>TOON PERSYN | CONTACT</title>
       </Head>
       <Container>
-        <div className="flex h-[60vh] flex-col justify-evenly font-primary text-sm">
-          <section className="content mt-6 grid grid-rows-3 justify-items-start gap-y-2 md:gap-y-0">
-            <h4 className="mb-2 font-bold uppercase">Details</h4>
+        <div className="ml-auto h-[60vh] max-w-xs font-primary text-sm">
+          <section className="w-auto pt-36 text-right">
             <p>+32472271589</p>
             <p>info@toonpersyn.be</p>
-            <p>BE 0659.774.994</p>
+            <p>Mechelen, Belgium</p>
+            <p>BTW: BE 0659.774.994</p>
           </section>
-          <section className="mt-6 grid grid-rows-3 justify-items-end gap-y-2">
-            <h4 className="mb-2 inline-block font-bold uppercase">socials</h4>
+          <section className="mt-6 grid auto-cols-max grid-flow-col justify-end gap-x-2">
             <a
               href="https://www.imdb.com/name/nm8900949/"
               className="underline hover:text-yellow-500"
