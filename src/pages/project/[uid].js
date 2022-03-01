@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
   // If the route is like /project/abc, then params.uid is abc
   const project = await Client().getByUID('project', params.uid);
 
-  return { props: { project } };
+  return { props: { project }, revalidate: 10 };
 }
 
 export async function getStaticPaths() {
