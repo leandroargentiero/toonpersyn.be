@@ -32,7 +32,7 @@ const Tile = ({
   return (
     <Link href={`/project/${uid}`} passHref>
       <motion.a variants={tileVariants} initial="hidden" animate="visible">
-        <article className="group relative mb-4">
+        <article className="group relative mb-4 md:mb-0">
           <figure className="relative aspect-[2.39/1] overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
               <Loader bgColor="bg-gray-50" iconColor="#e5e7eb" size={25} />
