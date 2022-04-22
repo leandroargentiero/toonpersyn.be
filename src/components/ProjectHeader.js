@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PrismicText } from '@prismicio/react';
 import ClipLoader from 'react-spinners/SquareLoader';
 import ReactPlayer from 'react-player';
 
-const ProjectHeader = ({ title, type, videoUrl }) => {
+const ProjectHeader = ({ title, type, videoUrl, thumbnail }) => {
   const [playerLoaded, setPlayerLoaded] = useState(false);
 
   return (
@@ -20,21 +21,34 @@ const ProjectHeader = ({ title, type, videoUrl }) => {
       <h1 className="font-primary text-2xl uppercase">
         <PrismicText field={title} />
       </h1>
-      <section className="relative mt-8 bg-gray-50 pt-[56.25%] dark:bg-neutral-800">
-        {!playerLoaded && (
-          <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
-            <ClipLoader color="#e5e7eb" size={30} />
-          </div>
-        )}
-        <ReactPlayer
-          className="absolute top-0 left-0"
-          url={videoUrl.text}
-          width="100%"
-          height="100%"
-          controls={true}
-          onReady={() => setPlayerLoaded(true)}
-        />
-      </section>
+      {videoUrl ? (
+        <div className="relative mt-8 bg-gray-50 pt-[56.25%] dark:bg-neutral-800">
+          {!playerLoaded && (
+            <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+              <ClipLoader color="#e5e7eb" size={30} />
+            </div>
+          )}
+          <ReactPlayer
+            className="absolute top-0 left-0"
+            url={videoUrl?.text}
+            width="100%"
+            height="100%"
+            controls={true}
+            onReady={() => setPlayerLoaded(true)}
+          />
+        </div>
+      ) : (
+        <div className="relative my-8 h-auto w-full">
+          <Image
+            className="object-cover"
+            src={thumbnail}
+            layout="responsive"
+            width={2880}
+            height={1077}
+            alt={title}
+          />
+        </div>
+      )}
     </header>
   );
 };

@@ -17,6 +17,7 @@ export default function Project({ project }) {
           <ProjectHeader
             type={project.data.type}
             title={project.data.title}
+            thumbnail={project.data.coverimage.url}
             videoUrl={project.data['video-url'][0]}
           />
           <ProjectBody content={project.data.content} />
