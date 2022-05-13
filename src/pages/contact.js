@@ -16,7 +16,9 @@ export default function Contact() {
             <p>+32472271589</p>
             <p>info@toonpersyn.be</p>
             <p>Mechelen, Belgium</p>
-            <p>BTW: BE 0659.774.994</p>
+            <p>BTW/VAT: BE 0659.774.994</p>
+            <br />
+            <p>Rookie member of the SBC</p>
           </section>
           <section className="mt-6 grid auto-cols-max grid-flow-col justify-end gap-x-2">
             <a
