@@ -1,24 +1,48 @@
-const FilterButtons = ({ categories, handleFilterClick, filter }) => {
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const FilterButtons = ({ categories, handleOnClick, filter }) => {
+  const [focused, setFocused] = useState(null);
+
   return (
-    <section className="mt-4 mb-8 grid w-full auto-cols-auto grid-flow-col justify-between md:justify-start md:gap-x-4">
+    <ul
+      className="mt-4 mb-8 flex w-full justify-between sm:w-fit sm:justify-start md:gap-x-5"
+      onMouseLeave={() => setFocused(null)}
+    >
       {categories &&
         categories.map((category) => {
           return (
-            <button
+            <li
+              tabIndex={0}
               key={category}
               value={category}
-              className={`rounded py-2 px-3 font-primary text-xs text-gray-800 dark:text-neutral-200 ${
-                category === filter
-                  ? 'bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700'
-                  : 'bg-white hover:bg-gray-100 active:bg-gray-200 dark:bg-neutral-900 dark:hover:bg-neutral-800'
-              }`}
-              onClick={handleFilterClick}
+              className={`group relative cursor-pointer py-2 px-4 leading-none`}
+              onKeyDown={(event) =>
+                event.key === 'Enter' ? handleOnClick(category) : null
+              }
+              onFocus={() => setFocused(category)}
+              onMouseEnter={() => setFocused(category)}
+              onClick={() => handleOnClick(category)}
             >
-              {category}
-            </button>
+              <span className="relative z-10 font-primary text-xs text-gray-800 dark:text-neutral-200">
+                {category}
+              </span>
+              {focused === category || filter === category ? (
+                <motion.div
+                  transition={{
+                    layout: {
+                      duration: 0.2,
+                      ease: 'easeOut',
+                    },
+                  }}
+                  className="absolute top-0 left-0 right-0 bottom-0 z-0 rounded-md bg-gray-100 group-active:bg-gray-200"
+                  layoutId="highlight"
+                />
+              ) : null}
+            </li>
           );
         })}
-    </section>
+    </ul>
   );
 };
 

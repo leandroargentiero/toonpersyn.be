@@ -35,7 +35,7 @@ export default function Home({ data }) {
         <FilterButtons
           categories={categories}
           filter={filter}
-          handleFilterClick={(e) => setFilter(e.target.value)}
+          handleOnClick={(filter) => setFilter(filter)}
         />
         <TileGrid projects={projects} />
       </Container>

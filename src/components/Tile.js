@@ -3,7 +3,7 @@ import { PrismicText } from '@prismicio/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Loader from './Loader';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Tile = ({
   imageUrl,
@@ -31,7 +31,12 @@ const Tile = ({
 
   return (
     <Link href={`/project/${uid}`} passHref>
-      <motion.a variants={tileVariants} initial="hidden" animate="visible">
+      <motion.a
+        variants={tileVariants}
+        layout
+        initial="hidden"
+        animate="visible"
+      >
         <article className="group relative mb-4 md:mb-0">
           <figure className="aspect-w-[2.39] aspect-h-1 relative overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
