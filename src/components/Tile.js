@@ -3,40 +3,43 @@ import { PrismicText } from '@prismicio/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Loader from './Loader';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion'
+
+const tileVariants = {
+  hidden: {
+    y: 16,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      delay: custom * 0.02,
+    },
+  }),
+};
 
 const Tile = ({
   imageUrl,
   type = 'project-type',
   title = 'project-title',
   uid,
-  i,
+  custom,
+  framerKey
 }) => {
   const [loaded, setLoaded] = useState(false);
 
-  const tileVariants = {
-    hidden: {
-      y: 16,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.2,
-        delay: i * 0.02,
-      },
-    },
-  };
-
   return (
-    <Link href={`/project/${uid}`} passHref>
-      <motion.a
-        variants={tileVariants}
-        layout
-        initial="hidden"
-        animate="visible"
-      >
+    <motion.a
+      key={framerKey}
+      variants={tileVariants}
+      layout
+      initial="hidden"
+      animate="visible"
+      custom={custom}
+    >
+      <Link href={`/project/${uid}`} passHref>
         <article className="group relative mb-4 md:mb-0">
           <figure className="aspect-w-[2.39] aspect-h-1 relative overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
@@ -65,8 +68,8 @@ const Tile = ({
             </figcaption>
           )}
         </article>
-      </motion.a>
-    </Link>
+      </Link>
+    </motion.a>
   );
 };
 

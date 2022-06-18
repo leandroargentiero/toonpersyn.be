@@ -1,4 +1,6 @@
 import Tile from './Tile';
+import { motion } from 'framer-motion';
+
 
 const TileGrid = ({ projects }) => {
   return (
@@ -10,7 +12,8 @@ const TileGrid = ({ projects }) => {
           type={project.data.type}
           title={project.data.title}
           uid={project.uid}
-          i={i}
+          custom={i}
+          framerKey={projects}
         />
       ))}
     </section>
