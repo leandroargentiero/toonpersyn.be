@@ -31,15 +31,15 @@ const Tile = ({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <motion.a
-      key={framerKey}
-      variants={tileVariants}
-      layout
-      initial="hidden"
-      animate="visible"
-      custom={custom}
-    >
-      <Link href={`/project/${uid}`} passHref>
+    <Link href={`/project/${uid}`} passHref>
+      <motion.a
+        key={framerKey}
+        variants={tileVariants}
+        layout
+        initial="hidden"
+        animate="visible"
+        custom={custom}
+      >
         <article className="group relative mb-4 md:mb-0">
           <figure className="aspect-w-[2.39] aspect-h-1 relative overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
@@ -68,8 +68,8 @@ const Tile = ({
             </figcaption>
           )}
         </article>
-      </Link>
-    </motion.a>
+      </motion.a>
+    </Link>
   );
 };
 
