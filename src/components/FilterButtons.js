@@ -11,6 +11,8 @@ const FilterButtons = ({ categories, handleOnClick, filter }) => {
     >
       {categories &&
         categories.map((category) => {
+          const isActive = focused === category || filter === category;
+          const isFocused = focused === category;
           return (
             <li
               tabIndex={0}
@@ -24,10 +26,10 @@ const FilterButtons = ({ categories, handleOnClick, filter }) => {
               onMouseEnter={() => setFocused(category)}
               onClick={() => handleOnClick(category)}
             >
-              <span className="relative z-10 font-primary text-xs text-gray-800 dark:text-neutral-200">
+              <span className={`relative z-10 font-primary text-xs text-gray-800 dark:text-neutral-200`}>
                 {category}
               </span>
-              {focused === category || filter === category ? (
+              {isActive && (
                 <motion.div
                   transition={{
                     layout: {
@@ -35,10 +37,10 @@ const FilterButtons = ({ categories, handleOnClick, filter }) => {
                       ease: 'easeOut',
                     },
                   }}
-                  className="absolute top-0 left-0 right-0 bottom-0 z-0 rounded-md bg-gray-100 group-active:bg-gray-200"
+                  className="absolute top-0 left-0 right-0 bottom-0 z-0 rounded-md bg-gray-100 group-active:bg-gray-200 dark:bg-white/10 group-active:bg-white/20"
                   layoutId="highlight"
                 />
-              ) : null}
+              )}
             </li>
           );
         })}
