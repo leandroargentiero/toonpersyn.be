@@ -4,15 +4,13 @@ import Link from 'next/link';
 const NavItem = ({ href, text, active }) => {
   return (
     <Link href={href}>
-      <a>
-        <li
-          className={`${
-            active ? 'text-yellow-500' : ''
-          } py-6 font-primary text-xs uppercase hover:text-yellow-500 active:text-yellow-600 md:p-0`}
-        >
-          {text}
-        </li>
-      </a>
+      <li
+        className={`${
+          active ? 'text-yellow-500' : ''
+        } py-6 font-primary text-xs uppercase hover:text-yellow-500 active:text-yellow-600 md:p-0`}
+      >
+        {text}
+      </li>
     </Link>
   );
 };

@@ -3,7 +3,7 @@ import { PrismicText } from '@prismicio/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Loader from './Loader';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const tileVariants = {
   hidden: {
@@ -26,29 +26,29 @@ const Tile = ({
   title = 'project-title',
   uid,
   custom,
-  framerKey
+  framerKey,
 }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Link href={`/project/${uid}`} passHref>
-      <motion.a
-        key={framerKey}
-        variants={tileVariants}
-        layout
-        initial="hidden"
-        animate="visible"
-        custom={custom}
-      >
+    <motion.div
+      key={framerKey}
+      variants={tileVariants}
+      layout
+      initial="hidden"
+      animate="visible"
+      custom={custom}
+    >
+      <Link href={`/project/${uid}`} passHref>
         <article className="group relative mb-4 md:mb-0">
-          <figure className="aspect-w-[2.39] aspect-h-1 relative overflow-hidden bg-gray-50 shadow-sm">
+          <figure className="aspect-h-1 aspect-w-[2.39] relative overflow-hidden bg-gray-50 shadow-sm">
             {!loaded ? (
               <Loader bgColor="bg-gray-50" iconColor="#e5e7eb" size={25} />
             ) : (
-              <div className="absolute top-0 left-0 z-10 h-full w-full transition duration-150 ease-in-out xl:group-hover:bg-black/40 xl:group-hover:backdrop-blur-sm" />
+              <div className="absolute left-0 top-0 z-10 h-full w-full transition duration-150 ease-in-out xl:group-hover:bg-black/40 xl:group-hover:backdrop-blur-sm" />
             )}
             <Image
-              className="absolute top-0 left-0 h-1/3 object-cover"
+              className="absolute left-0 top-0 h-1/3 object-cover"
               src={imageUrl}
               alt="my-image"
               layout="fill"
@@ -68,8 +68,8 @@ const Tile = ({
             </figcaption>
           )}
         </article>
-      </motion.a>
-    </Link>
+      </Link>
+    </motion.div>
   );
 };
 

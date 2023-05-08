@@ -18,7 +18,16 @@ export default function Contact() {
             <p>Mechelen, Belgium</p>
             <p>BTW/VAT: BE 0659.774.994</p>
             <br />
-            <p>Rookie member of the SBC</p>
+            <p>
+              Rookie member of the{' '}
+              <a
+                href=" http://www.sbcine.be/"
+                target="_blank"
+                className="underline hover:no-underline"
+              >
+                SBC
+              </a>
+            </p>
           </section>
           <section className="mt-6 grid auto-cols-max grid-flow-col justify-end gap-x-2">
             <a
@@ -44,14 +53,6 @@ export default function Contact() {
               rel="noreferrer"
             >
               Instagram
-            </a>
-            <a
-              href="https://www.linkedin.com/in/toon-persyn-7009b0149/"
-              className="underline hover:text-yellow-500"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
             </a>
           </section>
         </div>

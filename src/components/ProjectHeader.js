@@ -10,10 +10,8 @@ const ProjectHeader = ({ title, type, videoUrl, thumbnail }) => {
 
   return (
     <header className="my-8 lg:my-16">
-      <Link href="/">
-        <a className="font-primary text-xs hover:text-yellow-500">
-          &#8617;Back to overview
-        </a>
+      <Link href="/" className="font-primary text-xs hover:text-yellow-500">
+        &#8617;Back to overview
       </Link>
       <h2 className="mb-2 mt-8 font-primary text-xs uppercase tracking-wider text-yellow-500">
         {type}
@@ -24,12 +22,12 @@ const ProjectHeader = ({ title, type, videoUrl, thumbnail }) => {
       {videoUrl ? (
         <div className="relative mt-8 bg-gray-50 pt-[56.25%] dark:bg-neutral-800">
           {!playerLoaded && (
-            <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+            <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
               <ClipLoader color="#e5e7eb" size={30} />
             </div>
           )}
           <ReactPlayer
-            className="absolute top-0 left-0"
+            className="absolute left-0 top-0"
             url={videoUrl?.text}
             width="100%"
             height="100%"
